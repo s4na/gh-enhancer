@@ -74,7 +74,7 @@ test("renders three ordered fixed actions without duplication", async () => {
         const style = getComputedStyle(el);
         return { backgroundColor: style.backgroundColor, color: style.color };
       }),
-      { backgroundColor: "rgb(9, 105, 218)", color: "rgb(255, 255, 255)" },
+      { backgroundColor: "rgb(89, 99, 110)", color: "rgb(255, 255, 255)" },
     );
     assert.deepEqual(
       await page.$$eval("[data-s4na-floating-action]", (elements) =>
