@@ -16,6 +16,11 @@
   const isDisabled = (element) =>
     element.disabled || element.getAttribute("aria-disabled") === "true";
 
+  const isSubmitReviewButton = (button) => {
+    const label = button.querySelector('[data-component="text"]');
+    return label ? buttonText(label) === "Submit review" : buttonText(button) === "Submit review";
+  };
+
   const routeFor = (pull, action) => {
     const base = `/${pull.owner}/${pull.repository}/pull/${pull.number}`;
     return action === "approve" ? `${base}/changes` : base;
@@ -111,9 +116,7 @@
     if (!confirm(`${pull.owner}/${pull.repository} #${pull.number} をApproveしますか？`)) return;
 
     const openReview = oneVisible(
-      [...document.querySelectorAll("button")].filter(
-        (button) => buttonText(button) === "Submit review",
-      ),
+      [...document.querySelectorAll("button")].filter(isSubmitReviewButton),
     );
     if (!openReview) return alertFailure("Submit reviewボタンを一意に特定できません。");
     openReview.click();
@@ -135,7 +138,7 @@
     }
     approve.click();
     const submitReview = oneVisible(
-      [...dialog.querySelectorAll("button")].filter((button) => /^Submit review$/.test(buttonText(button))),
+      [...dialog.querySelectorAll("button")].filter(isSubmitReviewButton),
     );
     if (!submitReview || !(await waitUntilEnabled(submitReview))) {
       return alertFailure("Review送信ボタンを有効な状態で特定できません。");
