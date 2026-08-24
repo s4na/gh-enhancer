@@ -11,6 +11,9 @@ const launch = () =>
     headless: "new",
     pipe: true,
     enableExtensions: [extensionPath],
+    // GitHub-hosted runners cannot start extension-enabled Chrome with its sandbox.
+    // Every page request is intercepted below and served from an in-memory fixture.
+    args: ["--no-sandbox"],
   });
 
 let browser;
