@@ -4,7 +4,7 @@ GitHub Pull Requestで頻繁に使う操作を、画面右下のボタンから�
 
 ## 機能
 
-- `@codex`: コメント欄へ`@codex`だけを入力して投稿
+- `@codex`: コメント欄へ`@codex review`だけを入力して投稿
 - `Close PR`: 確認後、GitHub標準のClose操作を実行
 - `Approve`: 確認後、Files changedのGitHub標準Review UIからApprove
 

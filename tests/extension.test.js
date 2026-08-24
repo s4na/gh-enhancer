@@ -85,7 +85,7 @@ test("renders three ordered fixed actions without duplication", async () => {
     await page.close();
 });
 
-test("posts only @codex through the visible comment form", async () => {
+test("posts @codex review through the visible comment form", async () => {
     const page = await openPull(browser);
     await page.evaluate(() => {
       document.body.insertAdjacentHTML(
@@ -107,7 +107,7 @@ test("posts only @codex through the visible comment form", async () => {
     });
     await page.click("#gh-enhancer-codex");
     await page.waitForFunction(() => window.__submission);
-    assert.deepEqual(await page.evaluate(() => window.__submission), { body: "@codex", submitter: "comment-submit" });
+    assert.deepEqual(await page.evaluate(() => window.__submission), { body: "@codex review", submitter: "comment-submit" });
     await page.close();
 });
 

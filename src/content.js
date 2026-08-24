@@ -54,7 +54,7 @@
       ),
     );
     if (!submitter) return alertFailure("コメント投稿ボタンを一意に特定できません。");
-    if (!insertText(textarea, "@codex")) return alertFailure("コメント欄に入力できません。");
+    if (!insertText(textarea, "@codex review")) return alertFailure("コメント欄に入力できません。");
     form.requestSubmit(submitter);
   };
 
