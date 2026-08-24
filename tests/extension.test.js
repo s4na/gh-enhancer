@@ -70,6 +70,13 @@ test("renders three ordered fixed actions without duplication", async () => {
     assert.equal((await page.$$("#s4na-github-floating-actions")).length, 1);
     assert.equal(await page.$eval("#s4na-github-floating-actions", (el) => getComputedStyle(el).position), "fixed");
     assert.deepEqual(
+      await page.$eval("#gh-enhancer-codex", (el) => {
+        const style = getComputedStyle(el);
+        return { backgroundColor: style.backgroundColor, color: style.color };
+      }),
+      { backgroundColor: "rgb(89, 99, 110)", color: "rgb(255, 255, 255)" },
+    );
+    assert.deepEqual(
       await page.$$eval("[data-s4na-floating-action]", (elements) =>
         elements.map((element) => element.dataset.s4naFloatingAction),
       ),
