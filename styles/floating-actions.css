@@ -20,12 +20,12 @@
 }
 
 .s4na-gh-enhancer-button--default {
-  color: var(--fgColor-default, #1f2328);
-  background: var(--bgColor-default, #f6f8fa);
+  color: #ffffff;
+  background: #0969da;
 }
 
 .s4na-gh-enhancer-button--default:hover {
-  background: var(--bgColor-muted, #eaeef2);
+  background: #0860ca;
 }
 
 .s4na-gh-enhancer-button--approve {
