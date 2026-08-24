@@ -171,7 +171,10 @@ test("approves through the visible GitHub review dialog", async () => {
             '<textarea aria-label="Markdown value"></textarea>' +
             '<input type="radio" name="reviewEvent" value="comment" checked>' +
             '<input id="approve-radio" type="radio" name="reviewEvent" value="approve">' +
-            '<button id="submit-review" type="button" disabled>Submit review</button>' +
+            '<button id="submit-review" type="button" disabled>' +
+              '<span data-component="text">Submit review</span>' +
+              '<kbd><span>command</span><span>⌘</span><span>enter</span><span>⏎</span></kbd>' +
+            "</button>" +
           "</div>",
         );
         const approve = document.getElementById("approve-radio");
