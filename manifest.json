@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub PR Enhancer",
+  "version": "1.0.0",
+  "description": "Run common GitHub pull request actions from fixed buttons.",
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*/*/pull/*"],
+      "js": [
+        "src/github-dom.js",
+        "src/floating-actions.js",
+        "src/content.js"
+      ],
+      "css": ["styles/floating-actions.css"]
+    }
+  ]
+}
