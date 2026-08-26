@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "GitHub Enhancer",
+  "name": "GH Enhancer",
   "version": "1.0.0",
   "description": "Run common GitHub pull request actions from fixed buttons.",
   "content_scripts": [
