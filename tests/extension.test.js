@@ -50,6 +50,7 @@ const openPull = async (browser, pathName = "/octocat/Hello-World/pull/1") => {
 
 test("manifest resources exist", () => {
   const manifest = require("../manifest.json");
+  assert.equal(manifest.name, "GitHub Enhancer");
   const resources = manifest.content_scripts.flatMap(({ js = [], css = [] }) => [...js, ...css]);
   for (const resource of resources) {
     assert.ok(fs.existsSync(path.join(extensionPath, resource)), `missing: ${resource}`);
