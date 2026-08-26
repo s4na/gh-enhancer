@@ -1,4 +1,4 @@
-# GitHub Enhancer
+# GH Enhancer
 
 GitHub Pull Requestで頻繁に使う操作を、画面右下のボタンから実行するChrome拡張です。
 
